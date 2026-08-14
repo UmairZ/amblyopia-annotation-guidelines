@@ -1,31 +1,38 @@
 # Annotation Guidelines for Pediatric Amblyopia
 
-Reference guidelines for clinical annotators marking entities, relationships, and attributes in pediatric amblyopia ophthalmology notes, for a gold standard corpus annotated in INCEpTION. This is version 5.
+Version 5 of the annotation guidelines used in the development of a gold standard corpus of pediatric amblyopia ophthalmology notes. The corpus is annotated in INCEpTION. These guidelines specify the annotation schema, the eligibility criteria that determine which text is annotatable, and the rules governing span, attribute, and relation assignment.
 
-The whole thing is one self-contained HTML file. Open `index.html` in a browser and it works, with no build step, no dependencies, and no network requests.
+The guidelines are published as a single self-contained HTML file. It has no external dependencies and issues no network requests, and can be opened directly in a browser or served statically.
 
-## Why a website
+Rendered: https://umairz.github.io/amblyopia-annotation-guidelines/
 
-The first versions of these guidelines were a Word document. That is the wrong format for the job. An annotator hits an ambiguous span in the middle of a note and needs one specific rule in a few seconds, and scrolling a long document to find it breaks concentration every time. A single searchable page with a persistent table of contents and a decision flow answers the question where it gets asked.
+## Annotation schema
 
-Keeping it to one file matters for the same reason. Annotators are clinical staff, not developers. Anything that needs a server or an install will not get used.
+Annotation proceeds in three layers.
 
-## What it covers
-
-The annotation model has three layers, and the guidelines are organized around them:
-
-| Layer | What the annotator does |
+| Layer | Definition |
 |---|---|
-| Spans | Mark the minimal continuous text expressing a concept, one label per span |
-| Attributes | Set assertion, experiencer, and temporality, but only when the text explicitly indicates a non-default value |
-| Relationships | Link spans the text connects, such as laterality to diagnosis or adherence to treatment |
+| Span | The minimal continuous string expressing a concept, assigned exactly one label |
+| Attribute | Assertion, experiencer, and temporality, assigned only where the text explicitly indicates a value other than the default |
+| Relation | A link between spans that the text itself establishes, for example laterality to diagnosis, or adherence to treatment |
 
-The governing rule is to annotate what is written, not what the clinician appears to have meant. Missing laterality, missing time, and missing diagnoses are not inferred from context or from structured fields elsewhere in the note.
+The governing principle is that annotation records what is written rather than what the clinician can be presumed to have meant. Laterality, temporality, and diagnoses that are absent from the narrative are not inferred from surrounding context or from structured fields elsewhere in the note.
 
-Most annotator disagreement in early rounds came from eligibility rather than labeling, so the guidelines lead with a decision flow for what counts as annotatable text at all. Narrative sections written by the clinician are eligible: HPI and interval history, assessment, plan and MDM. Structured blocks are not, even when they render as text, which covers visual acuity tables, refraction grids, and slit lamp template rows. Review of systems checklists are never eligible, including negations such as "denies blurred vision".
+## Eligibility criteria
 
-The remaining sections cover attribute defaults and their override triggers, worked examples, a quick reference, and the full concept inventory with color codes.
+A substantial portion of the document addresses which text is eligible for annotation, presented as an explicit decision procedure.
+
+Eligible text consists of clinician-authored narrative: history of present illness and interval history, assessment, and plan or medical decision making. Structured content is ineligible regardless of whether it renders as prose, which excludes visual acuity tables, refraction grids, slit lamp template rows, and aligned columnar output. Review of systems checklists are ineligible in all cases, including negated findings such as "denies blurred vision".
+
+## Contents
+
+- Overview of the annotation procedure
+- Eligibility decision procedure
+- Attribute defaults and the conditions that trigger an override
+- Worked examples
+- Quick reference
+- Concept inventory with color coding
 
 ## Scope
 
-This repository contains the guidelines only. No clinical notes, no annotations, and no corpus data are included here.
+This repository contains the guidelines only. It includes no clinical notes, no annotations, and no corpus data.
