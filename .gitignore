@@ -1,0 +1,18 @@
+# Clinical data must never enter this repository
+notes/
+report/
+*.zip
+*.tsv
+*.ser
+
+# Source documents
+*.docx
+*.xlsx
+
+# AI tooling and internal working documents
+CLAUDE.md
+AGENTS.md
+.claude/
+docs/superpowers/
+
+.DS_Store
